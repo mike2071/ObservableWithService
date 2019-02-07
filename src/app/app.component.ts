@@ -27,8 +27,6 @@ export class AppComponent implements OnInit {
 
   stopData() {
     console.log('Stopped');
-    this.appService.myEventEmitter.unsubscribe();
-    // this.time = Date.now()
-    this.appService.resetEventEmmitter()
+    this.appService.myEventEmitter.complete();
   }
 }
