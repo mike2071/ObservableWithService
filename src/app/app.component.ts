@@ -15,18 +15,18 @@ export class AppComponent implements OnInit {
   }
   ngOnInit() {
     this.appService.myEventEmitter.subscribe(x => {
-    console.log("New Data...", x)
+      console.log('New Data...', x);
       this.time = x;
-    })
+    });
   }
 
-  getData(){
-    console.log("Fetching data...")
+  getData() {
+    console.log('Fetching data...');
     this.appService.myServiceFunction();
   }
 
-  stopData(){
-    console.log("Stopped")
+  stopData() {
+    console.log('Stopped');
     this.appService.myEventEmitter.unsubscribe();
     // this.time = Date.now()
     this.appService.resetEventEmmitter()
